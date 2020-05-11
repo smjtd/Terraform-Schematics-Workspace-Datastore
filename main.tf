@@ -11,6 +11,14 @@ variable "images" {
     us-west-2 = "image-4567"
   }
 }
+resource "null_resource" "sleep" {
+  
+	provisioner "local-exec" {
+	  command = "sleep 2"
+	}
+  }
+
+
 output "Workvalues" {
   value = "${var.images}"
 }
